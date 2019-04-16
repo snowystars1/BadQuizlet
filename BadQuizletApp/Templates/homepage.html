@@ -1,8 +1,11 @@
 <html>
-	<body>
+	{% load static %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'BadQuizletApp/style.css' %}">
+	<body class="content">
 		<h1>Bad Kwilzit</h1>
-		<button onclick="window.location.href = 'Create';">Create Set</button>
-		<button onclick="window.location.href = 'ViewAll';">View All Cards</button>
-		<button onclick="window.location.href = 'Random';">View Random Set</button>
+		<button class="button" onclick="window.location.href = 'Create';">Create Set</button>
+		<button class="button" onclick="window.location.href = 'ViewAll';">View All Cards</button>
+		<button class="button" onclick="window.location.href = 'Random';">View Random Set</button>
 	</body>
 </html>
