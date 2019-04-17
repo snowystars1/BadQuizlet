@@ -1,6 +1,9 @@
 from django.shortcuts import render
 # from django.template.loader import get_template
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+
+from .forms import CreateCardForm
 
 # Create your views here.
 
@@ -8,9 +11,17 @@ def index(request):
 	return render(request, "homepage.html")
 
 def createSet(request):
-	return render(request, "create.html")
+	if request.method == 'POST':
+		form = CreateCardForm(request.POST)
+		if(form.is_valid()):
+			print(form.cleaned_data['card1back'])
+			return HttpResponseRedirect('SetCreated')
+	else:
+		form = CreateCardForm()
+	return render(request, "create.html", {'form': form})
 
 def viewAll(request):
+
 	return render(request, "viewAll.html")
 
 def random(request):
