@@ -15,15 +15,19 @@ def createSet(request):
 	if request.method == 'POST':
 		form = CreateCardForm(request.POST)
 		if(form.is_valid()):
-			print(form.cleaned_data['card1back'])
+			set_name = form.cleaned_data['setName']
+			card1front = form.cleaned_data['card1front']
+			card1back = form.cleaned_data['card1back']
+			addCard(set_name, card1front, card2front)
 			return HttpResponseRedirect('SetCreated')
 	else:
 		form = CreateCardForm()
 	return render(request, "create.html", {'form': form})
 
 def viewAll(request):
-
-	return render(request, "viewAll.html")
+	cards = Cards.objects.all()
+	return render(request, "viewAll.html", {'cards':cards})
+	#return render(request, "viewAll.html")
 
 def random(request):
 	return render(request, "random.html")
@@ -38,3 +42,4 @@ def createSet(request):
 def addCard(setName, termName, definitionName):
 	b = Cards.objects.create(set_name=setName, term = termName, definition=definitionName)
 	b.save()
+
