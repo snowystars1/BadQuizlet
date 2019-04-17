@@ -9,5 +9,5 @@ urlpatterns = [
 	path('ViewAll', views.viewAll, name='viewAll'),
 	path('Random', views.random, name='random'),
 	path('ViewCards', views.viewCard, name='viewCard'),
-	#path('showCards', views.showCards, name='showCards'),
+	path('SetCreated', views.setCreated, name='setCreated'),
 ]

@@ -24,6 +24,9 @@ def createSet(request):
 		form = CreateCardForm()
 	return render(request, "create.html", {'form': form})
 
+def setCreated(request):
+	return render(request, "setCreated.html")
+
 def viewAll(request):
 	cards = Cards.objects.all()
 	return render(request, "viewAll.html", {'cards':cards})
