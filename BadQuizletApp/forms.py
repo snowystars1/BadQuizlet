@@ -3,6 +3,18 @@ from django import forms
 class CreateCardForm(forms.Form):
 	setName = forms.CharField(label='Set Name', max_length=100)
 
+	cardFronts = [None] * 10
+	cardBacks = [None] * 10
+
+
+	def __init__(self, *args, **kwargs):
+		super(CreateCardForm, self).__init__(*args, **kwargs)
+
+		for i in range(1, 11):
+			self.fields['cardFront_%s' % i] = forms.CharField(label = 'Card ' + str(i) + ' Front', max_length = 100)
+			self.fields['cardBack_%s' % i] = forms.CharField(label = 'Card ' + str(i) + ' Back', max_length = 100)
+
+'''
 	card1front = forms.CharField(label='Card 1 Front', max_length = 100)
 	card1back = forms.CharField(label='Card 1 Back', max_length = 100)
 	card2front = forms.CharField(label='Card 2 Front', max_length = 100)
@@ -23,4 +35,5 @@ class CreateCardForm(forms.Form):
 	card9back = forms.CharField(label='Card 9 Back', max_length = 100)
 	card10front = forms.CharField(label='Card 10 Front', max_length = 100)
 	card10back = forms.CharField(label='Card 10 Back', max_length = 100)
+	'''
 	

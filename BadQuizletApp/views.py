@@ -12,9 +12,11 @@ def index(request):
 
 def createSet(request):
 	if request.method == 'POST':
-		form = CreateCardForm(request.POST)
+		form = CreateCardForm(request.POST, 10)
 		if(form.is_valid()):
-			print(form.cleaned_data['card1back'])
+			for name, value in form.cleaned_data.items():
+				if name.startswith('cardFront_'):
+					print(form.fields[name].label, value)
 			return HttpResponseRedirect('SetCreated')
 	else:
 		form = CreateCardForm()
@@ -31,4 +33,5 @@ def random(request):
 	return render(request, "random.html")
 
 def viewCard(request):
+
 	return render(request, "viewCard.html")
