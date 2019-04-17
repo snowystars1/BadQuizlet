@@ -12,11 +12,12 @@ def index(request):
 
 def createSet(request):
 	if request.method == 'POST':
-		form = CreateCardForm(request.POST, 10)
+		form = CreateCardForm(request.POST)
 		if(form.is_valid()):
 			for name, value in form.cleaned_data.items():
 				if name.startswith('cardFront_'):
 					print(form.fields[name].label, value)
+					print(name)
 			return HttpResponseRedirect('SetCreated')
 	else:
 		form = CreateCardForm()
