@@ -35,5 +35,3 @@ class CreateCardForm(forms.Form):
 	card9back = forms.CharField(label='Card 9 Back', max_length = 100)
 	card10front = forms.CharField(label='Card 10 Front', max_length = 100)
 	card10back = forms.CharField(label='Card 10 Back', max_length = 100)
-	'''
-	
