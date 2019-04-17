@@ -1,17 +1,16 @@
 <html>
 	<body>
 		<h1>Create a set of flash cards</h1>
-		<form>
-			Card 1 Front <input type="text"  name="card1front"> Back <input type="text"  name="card1back">
-			Card 2 Front <input type="text"  name="card2front"> Back <input type="text"  name="card2back">
-			Card 3 Front <input type="text"  name="card3front"> Back <input type="text"  name="card3back">
-			Card 4 Front <input type="text"  name="card4front"> Back <input type="text"  name="card4back">
-			Card 5 Front <input type="text"  name="card5front"> Back <input type="text"  name="card5back">
-			Card 6 Front <input type="text"  name="card6front"> Back <input type="text"  name="card6back">
-			Card 7 Front <input type="text"  name="card7front"> Back <input type="text"  name="card7back">
-			Card 8 Front <input type="text"  name="card8front"> Back <input type="text"  name="card8back">
-			Card 9 Front <input type="text"  name="card9front"> Back <input type="text"  name="card9back">
-			Card 10 Front <input type="text"  name="card10front"> Back <input type="text"  name="card10back">
+		<form action="Create" method="post">
+			{% csrf_token %}
+			{% for field in form %}
+				<div>
+					{{ field.errors }}
+					{{ field.label_tag }} {{ field }}
+					<br>
+				</div>
+			{% endfor %}
+			<input type="submit" value="Submit">
 		</form>
 	</body>
 </html>
