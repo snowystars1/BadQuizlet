@@ -20,6 +20,9 @@ def createSet(request):
 		form = CreateCardForm()
 	return render(request, "create.html", {'form': form})
 
+def setCreated(request):
+	return render(request, "setCreated.html")
+
 def viewAll(request):
 
 	return render(request, "viewAll.html")
