@@ -1,6 +1,6 @@
 .button {
   border-radius: 8px;
-  background-color: #BBEAE9;
+  background-color: #ADD8E6;
   width: 100%;
   border: 3px solid #808080;
   color: black;
@@ -16,7 +16,7 @@
 }
 
 body{
-	background-image: linear-gradient(#89662C, #BA9559);
+	background-image: linear-gradient(#ADD8E6, white);
 }
 
 .button:hover{
