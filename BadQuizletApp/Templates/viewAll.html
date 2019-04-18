@@ -2,7 +2,7 @@
 	<body>
 		<h1>Viewing All Flashcards</h1>
 		{% for card in cards %}
-		{{card.set_name}}
+		Set: {{card.set_name}} Term: {{card.term}} Def: {{card.definition}} <br>
 		{%endfor%}
 	</body>
 </html>
