@@ -10,20 +10,14 @@
 				{% if field.name == 'setName' %}
 					<div>
 						{{ field.errors }}
-						{{ field.label_tag }} <br> {{ field }}
-						<br>
-						<br>
-						<br>
-						<br>
+						{{ field.label_tag }} <br> {{ field }} <br> <br>
 					</div>
 					<br>
 					<br>
 				{% else %}
 					<div>
 						{{ field.errors }}
-						{{ field.label_tag }} <br> {{ field }}
-						<br>
-						<br>
+						{{ field.label_tag }} <br> {{ field }} <br> <br>
 				</div>
 				{% endif %}
 			{% endfor %}
