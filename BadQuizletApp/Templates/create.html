@@ -14,11 +14,15 @@
 					</div>
 					<br>
 					<br>
-				{% else %}
+
+				{% elif field.name|slice:":9" == 'cardFront' %}
 					<div>
 						{{ field.errors }}
-						{{ field.label_tag }} <br> {{ field }} <br> <br>
-				</div>
+						{{ field.label_tag }} {{ field }} <br>
+				{% else %}
+						{{ field.errors }}
+						{{ field.label_tag }} {{ field }} <br> <br>
+					</div>
 				{% endif %}
 			{% endfor %}
 			<br>
