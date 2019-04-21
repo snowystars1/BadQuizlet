@@ -7,15 +7,13 @@ from .forms import CreateCardForm
 
 from .models import Cards
 from .models import Sets
-#setID=0
+
 # Create your views here.
 
 def index(request):
 	return render(request, "homepage.html")
 
 def createSet(request):
-	#global setID
-	#setID=setID+1
 	if request.method == 'POST':
 		form = CreateCardForm(request.POST)
 		if(form.is_valid()):
@@ -29,7 +27,6 @@ def createSet(request):
 				if term == '':
 					term = value
 				else:
-					#addCard(setID, form.cleaned_data['setName'], term, value)
 					addCard(card_set, term, value)
 					term = ''
 			return HttpResponseRedirect('SetCreated')
@@ -46,6 +43,7 @@ def viewAll(request):
 	return render(request, "viewAll.html", {'sets':sets})
 
 #view single set
+#not tested !!!!
 def viewSet(request, setID):
 	myset =Sets.objects.filter(id=setID)
 	return render(request, "viewSet.html", {'myset':myset})
@@ -54,16 +52,13 @@ def random(request):
 	return render(request, "random.html")
 
 def viewCard(request):
-
 	return render(request, "viewCard.html")
 
 def addCard(set_name, termName, definitionName):
 	c = Cards.objects.create(card_set=set_name, term = termName, definition=definitionName)
-	print(c)
 	c.save()
 
 def addSet(setName):
 	s = Sets.objects.create(set_name=setName)
-	print(s)
 	s.save()
 	return s
