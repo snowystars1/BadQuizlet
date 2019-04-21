@@ -46,11 +46,10 @@ def viewAll(request):
 	return render(request, "viewAll.html", {'sets':sets})
 
 #view single set
-"""
 def viewSet(request, setID):
 	myset =Sets.objects.filter(id=setID)
 	return render(request, "viewSet.html", {'myset':myset})
-"""
+
 def random(request):
 	return render(request, "random.html")
 

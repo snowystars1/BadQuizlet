@@ -1,0 +1,11 @@
+<html>
+	{% load static %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'BadQuizletApp/styleSet.css' %}">
+	<body>
+		<h1>Viewing All Flashcards</h1>
+		{% for set in sets %}
+		Set: {{set.id}} {{set.set_name}}<br>
+		{%endfor%}
+	</body>
+</html>
