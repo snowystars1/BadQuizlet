@@ -1,8 +1,11 @@
 <html>
 	<body>
 		<h1>Viewing All Flashcards</h1>
-		{% for card in cards %}
-		Set: {{card.set_name}} Term: {{card.term}} Def: {{card.definition}} <br>
+		{% for set in sets%}
+		<!-- Need to make each set name a link, include setID in the link -->
+		Set: {{set.id}}  {{set.set_name}}
 		{%endfor%}
+		<br>
+		
 	</body>
 </html>
