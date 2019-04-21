@@ -42,11 +42,11 @@ def viewAll(request):
 	sets = Sets.objects.all()
 	return render(request, "viewAll.html", {'sets':sets})
 
-#view single set
-#not tested !!!!
+#view cards of single set
 def viewSet(request, setID):
 	myset =Sets.objects.filter(id=setID)
-	return render(request, "viewSet.html", {'myset':myset})
+	cards = Cards.objects.filter(card_set__in=myset)
+	return render(request, "viewSet.html", {'cards':cards})
 
 def random(request):
 	return render(request, "random.html")
