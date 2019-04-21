@@ -38,6 +38,10 @@ def viewAll(request):
 	cards = Cards.objects.all()
 	return render(request, "viewAll.html", {'cards':cards})
 
+def viewSet(request):
+	cards = Cards.objects.all()
+	return render(request, "viewSet.html", {'cards':cards})
+
 def random(request):
 	return render(request, "random.html")
 
