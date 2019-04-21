@@ -38,7 +38,6 @@ def setCreated(request):
 	return render(request, "setCreated.html")
 
 def viewAll(request):
-	#cards = Cards.objects.all()
 	sets = Sets.objects.all()
 	return render(request, "viewAll.html", {'sets':sets})
 
@@ -49,7 +48,9 @@ def viewSet(request, setID):
 	return render(request, "viewSet.html", {'cards':cards})
 
 def random(request):
-	return render(request, "random.html")
+	randomSet = Sets.objects.order_by('?')[:1] #apparently inefficient, consider doing something else
+	cards = Cards.objects.filter(card_set__in=randomSet)
+	return render(request, "random.html", {'cards':cards})
 
 def viewCard(request):
 	return render(request, "viewCard.html")

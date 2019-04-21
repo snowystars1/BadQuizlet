@@ -1,5 +1,8 @@
 <html>
 	<body>
 		<h1>Selecting Random Card Set</h1>
+		{%for card in cards%}
+		{{card.term}}  {{card.definition}}
+		{%endfor%}
 	</body>
 </html>
