@@ -1,8 +1,11 @@
 <html>
+	{% load static %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'BadQuizletApp/styleSet.css' %}">
 	<body>
 		<h1>Selecting Random Card Set</h1>
 		{%for card in cards%}
-		{{card.term}}  {{card.definition}}
+		{{card.term}}  {{card.definition}}<br>
 		{%endfor%}
 	</body>
 </html>

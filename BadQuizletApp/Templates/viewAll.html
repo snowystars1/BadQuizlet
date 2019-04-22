@@ -1,10 +1,13 @@
 <html>
+	{% load static %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'BadQuizletApp/styleViewAll.css' %}">
 	<body>
 		<h1>Viewing All Flashcards</h1>
 		{% for set in sets%}
 		<!-- Need to make each set name a link, include setID in the link -->
 		<a href = "viewSet/{{set.id}}/">
-		Set: {{set.id}}  {{set.set_name}}
+		Set: {{set.id}}  {{set.set_name}}<br>
 		</a>
 		{%endfor%}
 		<br>
