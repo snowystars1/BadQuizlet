@@ -3,7 +3,7 @@ input[type=text] {
   width: 40%;
   border-color: #c2bebb;
   border-radius: 2px;
-  background-color: #c2bebb;
+  background-color: #d1cbca;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -31,9 +31,10 @@ input[type=submit]:hover {
 }
 
 label {
-    color: red;
-    /*text-shadow: 0px 1px #808080;*/
+    color: #595858;
+   /* text-shadow: 0px 1px #808080;*/
     font: 20px arial, sans-serif;
+    font-weight: 800;
     padding-right: 10px;
 }
 
@@ -47,9 +48,6 @@ h1 {
 
 body {
   background-image: linear-gradient(#ADD8E6, white);
-}
-
-div {
 }
 
 .content {

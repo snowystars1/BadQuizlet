@@ -4,9 +4,12 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'BadQuizletApp/styleSet.css' %}">
 	<body>
 		<h1>Viewing Single Set</h1>
-		{% for card in cards %}
-		{{card.term}}  {{card.definition}}<br>
-		{%endfor%}
+		<div class="cards">
+			{% for card in cards %}
+			<div class="term">
+			{{card.term}} </div> <div class="definition"> {{card.definition}} </div><br>
+			{%endfor%}
+		</div>
 	</body>
 	<button class="button" onclick="window.location.href = '/BadQuizletApp';">Home</button>
 </html>
