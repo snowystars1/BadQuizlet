@@ -72,13 +72,13 @@ body {
 }
 
 .definition{
-  opacity:0;
-  border-style:solid;
+  color:transparent;
+  border: solid #595858;
 
 }
 
 .definition:hover{
-  opacity:1;
+  color: #595858
 }
 
 .cards{
