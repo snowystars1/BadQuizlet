@@ -1,7 +1,11 @@
 <html>
+	{% load static %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'BadQuizletApp/styleCreated.css' %}">
 	<body>
-		<h1>YOU CREATED A SET GOOD JOB</h1>
+		<h1>YOU CREATED A SET</h1>
 	</body>
-	<button class="button" onclick="window.location.href = '/BadQuizletApp/Create';">Create Another</button>
-	<button class="button" onclick="window.location.href = '/BadQuizletApp';">HOme</button>
+	<button class="button" onclick="window.location.href = '/BadQuizletApp/Create';">Create Another Set</button>
+	<br>
+	<button class="button" onclick="window.location.href = '/BadQuizletApp';">Home</button>
 </html>

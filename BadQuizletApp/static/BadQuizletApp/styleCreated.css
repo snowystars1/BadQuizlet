@@ -1,11 +1,10 @@
 .button {
   border-radius: 8px;
   background-color: #ADD8E6;
-  width: 50%;
+  width: 30%;
   border: 4px solid #c2bebb;
   color: black;
   padding: 30px 64px;
-  /*text-align: center;*/
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
@@ -16,25 +15,23 @@
 }
 
 body{
-	background-image: linear-gradient(#ADD8E6, white);
+  background-image: linear-gradient(#ADD8E6, white);
+  text-align:center;
+  max-width:50%
+  margin:auto;
 }
 
 .button:hover{
-	background-color: #c2bebb;
-	color: white;
-	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: #c2bebb;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 h1 {
-	font: 100px arial, sans-serif;
-	text-shadow: 0px 3px #808080;
-	width: 100%;
-	font-weight: 600;
-	color: white;
-}
-
-div {
-	padding-top: 100px;
+  font: 100px arial, sans-serif;
+  text-shadow: 0px 3px #808080;
+  font-weight: 600;
+  color: white;
 }
 
 .content {
