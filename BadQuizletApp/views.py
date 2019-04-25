@@ -18,17 +18,21 @@ def createSet(request):
 		form = CreateCardForm(request.POST)
 		if(form.is_valid()):
 			#add to Set table
-			card_set = addSet(form.cleaned_data['setName'])
+			set_name = form.cleaned_data['setName']
+			card_set = addSet(set_name)
 			term = ''
+			definition = ''
 			for name, value in form.cleaned_data.items():
 				if name.startswith('cardFront_'):
-					print(form.fields[name].label, value)
-					print(name)
-				if term == '':
+
 					term = value
-				else:
-					addCard(card_set, term, value)
-					term = ''
+				elif name.startswith('cardBack_'):
+					definition = value
+				if(term!='' and definition!=''):
+					addCard(card_set, term, definition)
+
+					term  = ''
+					definition = ''
 			return HttpResponseRedirect('SetCreated')
 	else:
 		form = CreateCardForm()
